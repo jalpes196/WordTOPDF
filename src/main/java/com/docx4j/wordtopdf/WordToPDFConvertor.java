@@ -22,11 +22,11 @@ public class WordToPDFConvertor {
 
 			// Convert docx file format into WordprocessingMLPackage. This contains all
 			// metadata of your document.
-			InputStream is = new FileInputStream(new File("K:/demo.docx"));
+			InputStream is = new FileInputStream(new File("Input_File_Path"));
 			WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(is);
 
 			//Converting docx to PDF and putting into output folder
-			OutputStream out = new FileOutputStream(new File("K:/demo.pdf"));
+			OutputStream out = new FileOutputStream(new File("Output_File_Path"));
 			PdfConversion converter = new org.docx4j.convert.out.pdf.viaXSLFO.Conversion(wordMLPackage);
 			converter.output(out, pdfSettings);
 
